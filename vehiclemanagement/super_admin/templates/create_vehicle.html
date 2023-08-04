@@ -1,0 +1,16 @@
+{% extends 'navbar.html'%}
+
+{% load static %}
+
+{% block title %}   {% endblock %}
+
+{% block content %}
+    <h1 style="display: flex;justify-content: center;">{% if form.instance.pk %}Update{% else %}Add{% endif %} Vehicle</h1>
+    <div style="border:1px solid black;display:flex;justify-content: center;width:50%;margin-left: 25%;">
+    <form method="post" style="margin-top: 10%;margin-bottom: 10%;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if form.instance.pk %}Update{% else %}Add{% endif %} Vehicle</button>
+    </form>
+</div>
+    {% endblock %}  

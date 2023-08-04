@@ -1,0 +1,44 @@
+
+{% extends 'navbar.html'%}
+
+{% load static %}
+
+{% block title %}   {% endblock %}
+
+{% block content %}
+    <h1>Vehicle List</h1>
+    <br>
+    <br>
+    <br>
+    
+    <br>
+    <br>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">vehicle_number</th>
+          <th scope="col">vehicle_type</th>
+          <th scope="col">vehicle_model</th>
+          <th scope="col">vehicle_description</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for vehicle in vehicles %}
+        <tr>
+          <td>{{ vehicle.vehicle_number }}</td>
+          <td>{{ vehicle.vehicle_type }}</td>
+          <td>{{ vehicle.vehicle_model }}</td>
+          <td>{{ vehicle.vehicle_description }}</td>
+          
+          
+          
+        </tr>
+        {% endfor %}
+      </tbody>
+      
+    </table>
+    
+    
+    {% endblock %}
